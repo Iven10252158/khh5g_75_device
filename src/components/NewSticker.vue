@@ -76,6 +76,8 @@ export default {
 .billboard{
   position: relative;
   width: 100%;
+  // padding-top: 3em;
+  // padding-bottom: 3em;
   height: 10vh;
   background-color: #000;
   overflow: hidden;

@@ -3,15 +3,17 @@
     <NewSticker/>
     <div class="row g-0">
       <div class="col-sm-9">
-        <div v-show="showImage" class="video-image bg-cover" :style="{backgroundImage:'url(' +image+ ')'}"></div>
-        <div v-show="!showImage" class="video">
-          <iframe class="liveVideo" ref="liveVideo"
-              style='width:100%; height:90vh; display:block'
-              :src="youtubeSrc"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen>
-          </iframe>
+        <div class="outer">
+          <div v-show="showImage" class="video-image bg-cover" :style="{backgroundImage:'url(' +media_L_image+ ')'}"></div>
+          <div v-show="!showImage" class="video">
+            <iframe class="liveVideo" ref="liveVideo"
+                style='width:100%; display:block'
+                :src="media_L_video"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+          </div>
         </div>
       </div>
       <div class="col-sm-3">
@@ -45,52 +47,30 @@ export default {
   },
   data () {
     return {
-      showImage: false,
-      contents: [],
-      newStickerID: '',
-      mediaLID: '',
-      mediaSID: ''
+      showImage: false
     }
   },
   watch: {
-    image () {
+    media_L_image () {
       this.showImage = true
     },
-    youtubeSrc () {
+    media_L_video () {
       this.showImage = false
     }
   },
   computed: {
-    youtubeSrc () {
-      return this.$store.getters['ws/video']
+    media_L_image () {
+      return this.$store.getters['ws/media_L_image']
     },
-    image () {
-      return this.$store.getters['ws/image']
-    },
-    loading () {
-      return this.$store.getters['ws/loading']
+    media_L_video () {
+      return this.$store.getters['ws/media_L_video']
     }
   },
   methods: {
     getPageID () {
       this.$http.get(`http://20.106.156.149:8080/template/${this.$route.query.uuid}`)
         .then(res => {
-          console.log(res)
-          this.$store.dispatch('ws/handWsRes', res.data)
-          // this.contents = res.data.contents
-          // console.log('res', res.data)
-          // this.contents.forEach(content => {
-          //   if (content.name === 'newsticker') {
-          //     this.newStickerID = content.uuid
-          //     console.log('newSticker', this.newStickerID)
-          //   } else if (content.name === 'mediaL') {
-          //     this.mediaLID = content.uuid
-          //     console.log('mediaLID', this.mediaLID)
-          //   } else {
-          //     this.mediaSID = content.uuid
-          //     console.log('mediaSID', this.mediaSID)
-          //   }
-          // })
+          this.$store.dispatch('ws/handData', res.data)
           connectSocket(res.data.uuid)
         })
     }
@@ -103,9 +83,17 @@ export default {
 <style lang="scss" scoped>
 .bg-cover{
   background-size: cover;
+  background-repeat:no-repeat ;
   background-position: center center;
 }
-.video-image{
+.video iframe{
   height: 90vh;
+}
+.outer{
+  width: 100%;
+  height: 90vh;
+  .video-image{
+    height: 90vh;
+  }
 }
 </style>

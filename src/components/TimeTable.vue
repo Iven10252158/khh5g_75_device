@@ -3,12 +3,14 @@
     :loop="true"
     :autoplay='{ "delay": 2500, "disableOnInteraction": false }' >
         <swiper-slide>
-          <div class="workingDay w-100 bg-cover"></div>
-          <!-- <img class="img-fluid mb_0" src="~@/assets/輕軌時刻表_平日_5G.png" alt="輕軌時刻表_平日"> -->
+          <div class="wrap">
+            <div class="workingDay bg-cover"></div>
+          </div>
         </swiper-slide>
         <swiper-slide>
-          <div class="holiday w-100 bg-cover"></div>
-          <!-- <img class="img-fluid mb_0" src="~@/assets/輕軌時刻表_假日_5G.png" alt="輕軌時刻表_假日"> -->
+          <div class="wrap">
+            <div class="holiday bg-cover"></div>
+          </div>
         </swiper-slide>
     </swiper>
 </template>
@@ -50,22 +52,25 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.mySwiper {
-  display: flex;
-}
 .bg-cover{
-    background-size: cover;
-    background-position: center center;
+  background-size: contain;
+  background-repeat:no-repeat ;
+  background-position: center center;
 }
-.workingDay{
-    background-image: url('~@/assets/輕軌時刻表_平日_5G.png');
-    padding-top: 127.5%;
-    margin-bottom: 0px;
+.wrap{
+  border-right: 2px solid;
+  border-left: 2px solid;
+  width: 100%;
+  .workingDay{
+    background-image: url('~@/assets/輕軌時刻表_平日.png');
+    width: 100%;
+    height: 50vh;
+  }
+  .holiday{
+      background-image: url('~@/assets/輕軌時刻表_平日.png');
+      height: 50vh;
+
+  }
 }
 
-.holiday{
-    background-image: url('~@/assets/輕軌時刻表_假日_5G.png');
-    padding-top: 127.5%;
-    margin-bottom: 0px;
-}
 </style>
