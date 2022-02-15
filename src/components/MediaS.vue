@@ -34,16 +34,14 @@ export default {
 
 <style lang="scss" scoped>
     .wrap{
-        border: 2px solid;
+        // border: 2px solid;
         width: 100%;
-        height: 40vh;
         .media_s_picture{
-          // padding-top: 70%;
-          height: 40vh;
+          height: 42.7vh;
         }
     }
     .bg-cover{
-        background-size: contain;
+        background-size: cover;
         background-repeat:no-repeat ;
         background-position: center center;
     }

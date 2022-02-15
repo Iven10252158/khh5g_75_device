@@ -48,7 +48,7 @@ export default {
       if (this.textLeft < this.textWidth * -1) {
         this.textLeft = this.$refs.billboard?.offsetWidth
       }
-    }, 5)
+    }, 1)
   }
 }
 </script>
@@ -66,7 +66,7 @@ export default {
   width: 20%;
 
   .broadcast{
-    color: #97DFFF;
+    color: #FFDBAD;
     font-size: 48px;
     font-weight: 700;
     font-family: Roboto;
@@ -86,7 +86,7 @@ export default {
   justify-content: center;
 
   .text{
-    color: #97DFFF;
+    color: #FFDBAD;
     white-space: nowrap;
     font-size: 48px;
     font-weight: 700;

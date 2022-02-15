@@ -2,23 +2,29 @@
   <div class="allPage">
     <NewSticker/>
     <div class="row g-0">
-      <div class="col-sm-9">
-        <div class="outer">
-          <div v-show="showImage" class="video-image bg-cover" :style="{backgroundImage:'url(' +media_L_image+ ')'}"></div>
-          <div v-show="!showImage" class="video">
-            <iframe class="liveVideo" ref="liveVideo"
-                style='width:100%; display:block'
-                :src="media_L_video"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
+      <div class="d-flex">
+        <div class="col-sm-9">
+          <div class="outer">
+            <div v-show="showImage" class="video-image bg-cover" :style="{backgroundImage:'url(' +media_L_image+ ')'}"></div>
+            <div v-show="!showImage" class="video">
+              <iframe class="liveVideo" ref="liveVideo"
+                  style='width:100%; display:block'
+                  :src="media_L_video"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen>
+              </iframe>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-sm-3">
-        <MediaS/>
-        <TimeTable/>
+        <div class="col-sm-3">
+          <div>
+            <MediaS/>
+          </div>
+          <div>
+            <TimeTable/>
+          </div>
+        </div>
       </div>
     </div>
   </div>

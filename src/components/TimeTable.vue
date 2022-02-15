@@ -53,23 +53,22 @@ export default {
 
 <style lang="scss" scoped>
 .bg-cover{
-  background-size: contain;
+  background-size: cover;
   background-repeat:no-repeat ;
   background-position: center center;
 }
 .wrap{
-  border-right: 2px solid;
-  border-left: 2px solid;
-  width: 100%;
-  .workingDay{
-    background-image: url('~@/assets/輕軌時刻表_平日.png');
     width: 100%;
-    height: 50vh;
+  .workingDay{
+    padding-top:10px ;
+    background-image: url('~@/assets/輕軌時刻表_平日_5G.png');
+    height: 47.3vh;
+
   }
   .holiday{
-      background-image: url('~@/assets/輕軌時刻表_平日.png');
-      height: 50vh;
-
+    padding-top:10px ;
+      background-image: url('~@/assets/輕軌時刻表_假日_5G.png');
+      height: 47.3vh;
   }
 }
 
