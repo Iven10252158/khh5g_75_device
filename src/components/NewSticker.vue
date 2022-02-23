@@ -44,7 +44,7 @@ export default {
   },
   mounted () {
     setInterval(() => {
-      this.textLeft--
+      this.textLeft -= 1.5
       if (this.textLeft < this.textWidth * -1) {
         this.textLeft = this.$refs.billboard?.offsetWidth
       }
@@ -63,7 +63,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 20%;
+  width: 15%;
 
   .broadcast{
     color: #FFDBAD;
@@ -76,9 +76,7 @@ export default {
 .billboard{
   position: relative;
   width: 100%;
-  // padding-top: 3em;
-  // padding-bottom: 3em;
-  height: 10vh;
+  height: 11.1vh;
   background-color: #000;
   overflow: hidden;
   display: flex;

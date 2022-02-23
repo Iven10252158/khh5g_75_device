@@ -61,14 +61,14 @@ export default {
     width: 100%;
   .workingDay{
     padding-top:10px ;
-    background-image: url('~@/assets/輕軌時刻表_平日_5G.png');
-    height: 47.3vh;
+    background-image: url('~@/assets/images/輕軌時刻表_平日_5G.png');
+    height: 46.1vh;
 
   }
   .holiday{
     padding-top:10px ;
-      background-image: url('~@/assets/輕軌時刻表_假日_5G.png');
-      height: 47.3vh;
+    background-image: url('~@/assets/images/輕軌時刻表_假日_5G.png');
+    height: 46.1vh;
   }
 }
 
