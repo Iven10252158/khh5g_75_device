@@ -2,7 +2,7 @@
     <div class="marquee">
         <div class="broadcast-box">
             <div class="broadcast text-center mb-0">
-                <i class="fas fa-bullhorn"></i>
+                <img src="~@/assets/svg/broadcast.svg" alt="">
             </div>
         </div>
         <div ref="billboard" class="billboard" >
@@ -44,7 +44,7 @@ export default {
   },
   mounted () {
     setInterval(() => {
-      this.textLeft -= 1.5
+      this.textLeft -= 1.2
       if (this.textLeft < this.textWidth * -1) {
         this.textLeft = this.$refs.billboard?.offsetWidth
       }
@@ -63,13 +63,19 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 15%;
-
+  margin: 0 50px;
+  @media(max-width:1920px) {
+    margin: 0 25px;
+  }
   .broadcast{
-    color: #FFDBAD;
-    font-size: 48px;
-    font-weight: 700;
-    font-family: Roboto;
+    img {
+      width: 70px;
+      height: 60px;
+      @media(max-width:1920px) {
+        width: 35px;
+        height: 30px;
+      }
+    }
   }
 }
 
@@ -90,6 +96,9 @@ export default {
     font-weight: 700;
     font-family: Roboto;
     position: absolute;
+    @media(max-width:1920px) {
+      font-size: 24px;
+    }
   }
 }
 </style>

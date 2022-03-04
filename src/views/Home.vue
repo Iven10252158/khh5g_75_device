@@ -2,7 +2,7 @@
 export default {
   methods: {
     templateAPI () {
-      this.$router.push({ path: 'content', query: { uuid: 'eb8f5c8b-6909-428f-94e4-c9cb52b39a86' } })
+      this.$router.push({ path: 'content', query: { uuid: `${process.env.VUE_APP_UUID}` } })
     }
   },
   mounted () {

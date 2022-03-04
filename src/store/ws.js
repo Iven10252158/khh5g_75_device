@@ -28,10 +28,10 @@ const mutations = {
               console.log('media_s', state.media_S.image)
               break
             case 'video' :
-              state.media_S.src = `https://www.youtube.com/embed/${item.content}?wmode=opaque&autohide=1&autoplay=1&mute=1&loop=1&playlist=${item.content}`
+              state.media_S.src = `https://www.youtube.com/embed/${item.content}?wmode=opaque&autohide=1&autoplay=1&mute=0&loop=1&playlist=${item.content}`
               break
             case 'stream':
-              state.media_S.src = `https://www.youtube.com/embed/${item.content}?wmode=opaque&autohide=1&autoplay=1&mute=1&loop=1&playlist=${item.content}`
+              state.media_S.src = `https://www.youtube.com/embed/${item.content}?wmode=opaque&autohide=1&autoplay=1&mute=0&loop=1&playlist=${item.content}`
               break
           }
         } else if (item.listID === state.newStickerID) {
@@ -44,11 +44,11 @@ const mutations = {
               console.log('media_L', state.media_L.image)
               break
             case 'video' :
-              state.media_L.src = `https://www.youtube.com/embed/${item.content}?wmode=opaque&autohide=1&autoplay=1&mute=1&loop=1&playlist=${item.content}`
+              state.media_L.src = `https://www.youtube.com/embed/${item.content}?wmode=opaque&autohide=1&autoplay=1&mute=0&loop=1&playlist=${item.content}`
               console.log('media_L', state.media_L.src)
               break
             case 'stream':
-              state.media_L.src = `https://www.youtube.com/embed/${item.content}?wmode=opaque&autohide=1&autoplay=1&mute=1&loop=1&playlist=${item.content}`
+              state.media_L.src = `https://www.youtube.com/embed/${item.content}?wmode=opaque&autohide=1&autoplay=1&mute=0&loop=1&playlist=${item.content}`
               break
           }
         }
@@ -61,11 +61,11 @@ const mutations = {
             console.log('media_s image', state.media_S.image)
             break
           case 'video' :
-            state.media_S.src = `https://www.youtube.com/embed/${payload.content}?wmode=opaque&autohide=1&autoplay=1&mute=1&loop=1&playlist=${payload.content}`
+            state.media_S.src = `https://www.youtube.com/embed/${payload.content}?wmode=opaque&autohide=1&autoplay=1&mute=0&loop=1&playlist=${payload.content}`
             console.log('media_s video', state.media_S.image)
             break
           case 'stream':
-            state.media_S.src = `https://www.youtube.com/embed/${payload.content}?wmode=opaque&autohide=1&autoplay=1&mute=1&loop=1&playlist=${payload.content}`
+            state.media_S.src = `https://www.youtube.com/embed/${payload.content}?wmode=opaque&autohide=1&autoplay=1&mute=0&loop=1&playlist=${payload.content}`
             break
         }
       } else if (payload.listID === state.newStickerID) {
@@ -78,11 +78,11 @@ const mutations = {
             console.log('media_L image', state.media_L.image)
             break
           case 'video' :
-            state.media_L.src = `https://www.youtube.com/embed/${payload.content}?wmode=opaque&autohide=1&autoplay=1&mute=1&loop=1&playlist=${payload.content}`
+            state.media_L.src = `https://www.youtube.com/embed/${payload.content}?wmode=opaque&autohide=1&autoplay=1&mute=0&loop=1&playlist=${payload.content}`
             console.log('media_L video', state.media_L.src)
             break
           case 'stream':
-            state.media_L.src = `https://www.youtube.com/embed/${payload.content}?wmode=opaque&autohide=1&autoplay=1&mute=1&loop=1&playlist=${payload.content}`
+            state.media_L.src = `https://www.youtube.com/embed/${payload.content}?wmode=opaque&autohide=1&autoplay=1&mute=0&loop=1&playlist=${payload.content}`
             break
         }
       }

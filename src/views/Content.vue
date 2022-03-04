@@ -72,7 +72,7 @@ export default {
   },
   methods: {
     getPageID () {
-      this.$http.get(`http://20.106.156.149:8080/template/${this.$route.query.uuid}`)
+      this.$http.get(`${process.env.VUE_APP_URL}:8080/template/${this.$route.query.uuid}`)
         .then(res => {
           this.$store.dispatch('ws/handData', res.data)
           connectSocket(res.data.uuid)

@@ -1,7 +1,8 @@
 <template>
     <swiper class="mySwiper"
+    :speed="800"
     :loop="true"
-    :autoplay='{ "delay": 2500, "disableOnInteraction": false }' >
+    :autoplay='{ "delay": 8000, "disableOnInteraction": false }' >
         <swiper-slide>
           <div class="wrap">
             <div class="workingDay bg-cover"></div>
