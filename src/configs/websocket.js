@@ -3,9 +3,9 @@ import store from '../store'
 let socket = null
 
 export const connectSocket = (id) => {
-  const WS_BASE = '20.106.156.149:8080/ws/' // 192.168.1.176:8080/ws/'
+  const WS_BASE = 'wss://khh5g-backend.azurewebsites.net/ws/' // 192.168.1.176:8080/ws/'
   const WS_PORT = id // 5fe69ddb-43f1-40f5-82a3-01af0e59556d'
-  const WS_ADDRESS = `ws://${WS_BASE}${WS_PORT}`
+  const WS_ADDRESS = `${WS_BASE}${WS_PORT}`
   socket = new WebSocket(WS_ADDRESS)
 
   socket.onopen = () => { // 連線(onopen)

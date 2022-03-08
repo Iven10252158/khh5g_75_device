@@ -3,7 +3,7 @@
     <div v-show="media_S_showImage" class="bg-cover media_s_picture" :style="{backgroundImage:'url(' + media_S_image + ')'}"></div>
     <div v-show="!media_S_showImage" class="video">
       <iframe class="liveVideo" ref="liveVideo"
-          style='width:100%; height:42vh; display:block'
+          style='width:100%; height:42.8vh; display:block'
           :src="media_S_video"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -21,10 +21,18 @@ export default {
   },
   watch: {
     media_S_image () {
-      this.media_S_showImage = true
+      if (this.media_S_image) {
+        this.media_S_showImage = true
+        // this.isLoading = false
+        console.log('watch, media_S_image', this.media_S_image, this.media_S_showImage)
+      }
     },
     media_S_video () {
-      this.media_S_showImage = false
+      if (this.media_S_video) {
+        this.media_S_showImage = false
+        // this.isLoading = false
+        console.log('watch, media_S_video', this.media_S_video, !this.media_S_showImage)
+      }
     }
   },
   computed: {
@@ -43,6 +51,7 @@ export default {
         width: 100%;
         .media_s_picture{
           height: 42.8vh;
+          display: block;
         }
     }
     .bg-cover{
