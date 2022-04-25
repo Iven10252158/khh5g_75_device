@@ -17,7 +17,7 @@ export const connectSocket = (id) => {
   }
   socket.onmessage = (msg) => { // 監聽訊息(onmessage)
     store.dispatch('ws/handWsRes', JSON.parse(msg.data))
-    console.log('onmessage:', id, JSON.parse(msg.data))
+    // console.log('onmessage:', id, JSON.parse(msg.data))
   }
   socket.onerror = (err) => { // 監聽錯誤(onerror)
     console.log('error', err)

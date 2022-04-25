@@ -24,14 +24,14 @@ export default {
       if (this.media_S_image) {
         this.media_S_showImage = true
         // this.isLoading = false
-        console.log('watch, media_S_image', this.media_S_image, this.media_S_showImage)
+        // console.log('watch, media_S_image', this.media_S_image, this.media_S_showImage)
       }
     },
     media_S_video () {
       if (this.media_S_video) {
         this.media_S_showImage = false
         // this.isLoading = false
-        console.log('watch, media_S_video', this.media_S_video, !this.media_S_showImage)
+        // console.log('watch, media_S_video', this.media_S_video, !this.media_S_showImage)
       }
     }
   },
